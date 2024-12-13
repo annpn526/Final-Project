@@ -1,0 +1,18 @@
+if __name__ == "__main__":
+    # Load datasets
+    print("Loading DICOM data...")
+    testds = dir2Array(testDir)  # Load test DICOM images
+    trainds = dir2Array(trainDir)  # Load training DICOM images
+
+    # Split datasets
+    print("Splitting datasets...")
+    test_sample, _ = split_data(testds, 1500)  # Randomly pick 1500 test samples
+    train_sample, _ = split_data(trainds, 1500)  # Randomly pick 1500 train samples
+
+    # Visualize some test samples
+    print("Visualizing test samples...")
+    plotImgs(test_sample)
+
+    # Visualize some train samples
+    print("Visualizing train samples...")
+    plotImgs(train_sample)
